@@ -34,3 +34,6 @@ build/
 
 # Ignorar archivos de configuración
 application*.properties
+
+# Ignorar la carpeta resources
+resources/
