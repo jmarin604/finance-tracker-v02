@@ -86,50 +86,56 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(readOnly = false, propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     public void update(UserDTO userDTO, String userModifier) throws NotFoundException {
-        log.info("Updating user: {}", userDTO);
-        validate(userDTO);
-        User user;
+        try {
 
-        if (userDTO.getUserId() == null || userDTO.getUserId() <= 0) {
-            throw new NotFoundException("Id is null or invalid");
-            
+            log.info("Updating user: {}", userDTO);
+            validate(userDTO);
+            User user;
+
+            if (userDTO.getUserId() == null || userDTO.getUserId() <= 0) {
+                throw new NotFoundException("Id is null or invalid");
+
+            }
+
+            Optional<User> optionalId = userRepository.findById(userDTO.getUserId());
+            user = optionalId.orElseThrow(() -> new NotFoundException("User not found" + userDTO.getUserId()));
+
+            Optional<User> optionalUser = userRepository.findByUsername(userDTO.getUsername());
+            if (optionalUser.isPresent() && !optionalUser.get().getUserId().equals(userDTO.getUserId())) {
+                if (optionalUser.get().getStatus().equals(Constants.ENABLED)) {
+                    throw new NotFoundException("Username already exists");
+                }
+            }
+
+            Optional<User> optionalUserEmail = userRepository.findByEmail(userDTO.getEmail());
+            if (optionalUserEmail.isPresent() && !optionalUserEmail.get().getUserId().equals(userDTO.getUserId())) {
+                if (optionalUserEmail.get().getStatus().equals(Constants.ENABLED)) {
+                    throw new NotFoundException("Email already exists");
+                }
+            }
+
+            Optional<String> passwordEncripted = CustomPasswordGenerator.hashPassword(userDTO.getPassword());
+
+            user.setUsername(userDTO.getUsername());
+            user.setPassword(passwordEncripted.get());
+            user.setEmail(userDTO.getEmail());
+            user.setModifierUser(userModifier);
+            user.setModificationDate(new Date());
+            user.setStatus(Constants.ENABLED);
+
+            userRepository.save(user);
+
+        } catch (Exception e) {
+            log.error("Error updating user: {}", e.getMessage());
+            throw new NotFoundException(e.getMessage());
         }
-
-        Optional<User> optionalId = userRepository.findById(userDTO.getUserId());
-        user = optionalId.orElseThrow(() -> new NotFoundException("User not found" + userDTO.getUserId()));
-
-
-        Optional<User> optionalUser = userRepository.findByUsername(userDTO.getUsername());
-        if (optionalUser.isPresent() && !optionalUser.get().getUserId().equals(userDTO.getUserId())) {
-          if (optionalUser.get().getStatus().equals(Constants.ENABLED)) {
-            throw new NotFoundException("Username already exists");
-          }             
-        }
-
-        Optional<User> optionalUserEmail = userRepository.findByEmail(userDTO.getEmail());
-        if (optionalUserEmail.isPresent() && !optionalUserEmail.get().getUserId().equals(userDTO.getUserId())) {
-          if (optionalUserEmail.get().getStatus().equals(Constants.ENABLED)) {
-            throw new NotFoundException("Email already exists");
-          }             
-        }
-
-        Optional<String> passwordEncripted = CustomPasswordGenerator.hashPassword(userDTO.getPassword());
-
-        user.setUsername(userDTO.getUsername());
-        user.setPassword(passwordEncripted.get());
-        user.setEmail(userDTO.getEmail());
-        user.setModifierUser(userModifier);
-        user.setModificationDate(new Date());
-        user.setStatus(Constants.ENABLED);
-
-        userRepository.save(user);
     }
 
     @Override
     @Transactional(readOnly = false, propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     public void delete(Integer userId, String userDelete) throws NotFoundException {
         log.info("Deleting user: {}", userId);
-      
+
         if (userId == null || userId <= 0) {
             throw new NotFoundException("Id is null or invalid");
         }
@@ -143,6 +149,5 @@ public class UserServiceImpl implements UserService {
 
         userRepository.save(user);
     }
-
 
 }
