@@ -106,3 +106,82 @@ This generated password is for development use only. Your security configuration
 2024-10-14T17:22:15.600-05:00  INFO 14752 --- [finance-tracker] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-10-14T17:22:15.606-05:00  INFO 14752 --- [finance-tracker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-10-14T17:22:16.619-05:00  INFO 14752 --- [finance-tracker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-14T21:27:40.919-05:00  INFO 15024 --- [finance-tracker] [restartedMain] c.f.tracker.FinanceTrackerApplication    : Starting FinanceTrackerApplication using Java 21.0.3 with PID 15024 (C:\Projects\finance tracker\target\classes started by juand in C:\Projects\finance tracker)
+2024-10-14T21:27:41.031-05:00  INFO 15024 --- [finance-tracker] [restartedMain] c.f.tracker.FinanceTrackerApplication    : The following 1 profile is active: "dev"
+2024-10-14T21:27:41.337-05:00  INFO 15024 --- [finance-tracker] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-14T21:27:41.340-05:00  INFO 15024 --- [finance-tracker] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-14T21:27:46.431-05:00  INFO 15024 --- [finance-tracker] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-14T21:27:46.669-05:00  INFO 15024 --- [finance-tracker] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 201 ms. Found 4 JPA repository interfaces.
+2024-10-14T21:27:50.246-05:00  INFO 15024 --- [finance-tracker] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-14T21:27:50.300-05:00  INFO 15024 --- [finance-tracker] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-14T21:27:50.301-05:00  INFO 15024 --- [finance-tracker] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-10-14T21:27:50.461-05:00  INFO 15024 --- [finance-tracker] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-14T21:27:50.463-05:00  INFO 15024 --- [finance-tracker] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9119 ms
+2024-10-14T21:27:51.767-05:00  INFO 15024 --- [finance-tracker] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-14T21:27:52.228-05:00  INFO 15024 --- [finance-tracker] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-14T21:27:52.464-05:00  INFO 15024 --- [finance-tracker] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-14T21:27:55.247-05:00  INFO 15024 --- [finance-tracker] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-14T21:27:55.312-05:00  INFO 15024 --- [finance-tracker] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-14T21:27:56.893-05:00  INFO 15024 --- [finance-tracker] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5c4bb32b
+2024-10-14T21:27:56.898-05:00  INFO 15024 --- [finance-tracker] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-14T21:27:57.064-05:00  WARN 15024 --- [finance-tracker] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-14T21:27:58.859-05:00  INFO 15024 --- [finance-tracker] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-14T21:28:00.544-05:00  INFO 15024 --- [finance-tracker] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-14T21:28:01.997-05:00  WARN 15024 --- [finance-tracker] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-14T21:28:02.095-05:00  WARN 15024 --- [finance-tracker] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 6dd650ba-b46c-4c66-b4a2-0ffbdeb6d820
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-10-14T21:28:02.147-05:00  INFO 15024 --- [finance-tracker] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-10-14T21:28:03.880-05:00  INFO 15024 --- [finance-tracker] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-14T21:28:05.226-05:00  INFO 15024 --- [finance-tracker] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-10-14T21:28:05.450-05:00  WARN 15024 --- [finance-tracker] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-10-14T21:28:05.465-05:00  INFO 15024 --- [finance-tracker] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-14T21:28:05.477-05:00  INFO 15024 --- [finance-tracker] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-14T21:28:06.509-05:00  INFO 15024 --- [finance-tracker] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-14T21:28:06.550-05:00  INFO 15024 --- [finance-tracker] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-14T21:28:06.603-05:00 ERROR 15024 --- [finance-tracker] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2024-10-14T21:28:54.646-05:00  INFO 2020 --- [finance-tracker] [main] c.f.t.FinanceTrackerApplicationTests     : Starting FinanceTrackerApplicationTests using Java 21.0.3 with PID 2020 (started by juand in C:\Projects\finance tracker)
+2024-10-14T21:28:54.654-05:00  INFO 2020 --- [finance-tracker] [main] c.f.t.FinanceTrackerApplicationTests     : The following 1 profile is active: "dev"
+2024-10-14T21:28:57.793-05:00  INFO 2020 --- [finance-tracker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-14T21:28:57.975-05:00  INFO 2020 --- [finance-tracker] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 166 ms. Found 4 JPA repository interfaces.
+2024-10-14T21:28:59.862-05:00  INFO 2020 --- [finance-tracker] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-14T21:29:00.027-05:00  INFO 2020 --- [finance-tracker] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-14T21:29:00.133-05:00  INFO 2020 --- [finance-tracker] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-14T21:29:02.111-05:00  INFO 2020 --- [finance-tracker] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-14T21:29:02.153-05:00  INFO 2020 --- [finance-tracker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-14T21:29:03.639-05:00  INFO 2020 --- [finance-tracker] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@44dcc0e4
+2024-10-14T21:29:03.641-05:00  INFO 2020 --- [finance-tracker] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-14T21:29:03.779-05:00  WARN 2020 --- [finance-tracker] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-14T21:29:05.363-05:00  INFO 2020 --- [finance-tracker] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-14T21:29:06.935-05:00  INFO 2020 --- [finance-tracker] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-14T21:29:08.089-05:00  WARN 2020 --- [finance-tracker] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-14T21:29:08.158-05:00  WARN 2020 --- [finance-tracker] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 08df8e28-0421-46fa-804b-1f8d5e1abd4c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-10-14T21:29:08.189-05:00  INFO 2020 --- [finance-tracker] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-10-14T21:29:09.205-05:00  INFO 2020 --- [finance-tracker] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-14T21:29:10.454-05:00  INFO 2020 --- [finance-tracker] [main] c.f.t.FinanceTrackerApplicationTests     : Started FinanceTrackerApplicationTests in 16.335 seconds (process running for 19.681)
+2024-10-14T21:29:11.612-05:00  INFO 2020 --- [finance-tracker] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-14T21:29:11.616-05:00  INFO 2020 --- [finance-tracker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-14T21:29:12.645-05:00  INFO 2020 --- [finance-tracker] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
