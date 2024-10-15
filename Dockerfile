@@ -1,14 +1,14 @@
-# Cambiar a la imagen base de Java 
+# Usar la imagen base de OpenJDK con JDK 21
 FROM openjdk:21-jdk-slim
 
-# Establecer el directorio de trabajo en el contenedor
+# Crear un directorio para la aplicación
 WORKDIR /app
 
-# Exponer el puerto
+# Exponer el puerto de la aplicación
 EXPOSE 8080
 
-# Copiar el archivo JAR generado al contenedor
+# Copiar el archivo JAR al contenedor
 COPY target/finance-tracker-0.0.1-SNAPSHOT.jar /app/finance-tracker.jar
 
-# Comando para ejecutar la aplicación
+# Ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "/app/finance-tracker.jar"]
